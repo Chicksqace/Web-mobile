@@ -1,0 +1,169 @@
+ul{
+    /* 因为内外边距是在ul这个标签上，不是在li这个标签上，所以清除li的内外边距会不起作用 */
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+a{
+    text-decoration: none;
+    color: #666;
+}
+a:hover{
+    text-decoration: none;
+}
+a:visited{
+    text-decoration: none;
+}
+a:link{
+    text-decoration: none;
+}
+.container{
+    background-color: #fff;
+}
+
+/* 修改container的最大宽度为 1280 根据设计稿来走的 */
+@media screen and (min-width:1280px) {
+    .container{
+        width: 1280px;
+    }
+    
+}
+/* header */
+header{
+    padding-left: 0 !important;
+}
+.logo{
+    background: #429ad9;
+}
+/* 实现我们在超小屏幕下 隐藏图片 */
+/* 我们实现准备一个盒子，它在一般情况下隐藏，超小盒子下显示 */
+.logo span{
+    display: block;
+    height: 50px;
+    line-height: 50px;
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+}
+.logo img{
+    /* width: 100%; */
+    /* 就是最大宽度就是图片本身的宽度 */
+    /* max width:100%的意思是，当父级长度大于自身宽度时用自身宽度，小于则用父级宽度 */
+    /*  logo图片不需要缩放 */
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+.nav{
+    background-color: #eee;
+    border-bottom: 1px solid #ccc;
+}
+.nav a{
+    display: block;
+    height: 50px;
+    line-height: 50px;
+    padding-left: 30px;
+    font-size: 16px;
+}
+.nav a:hover{
+    background-color: #fff;
+    color: #333;
+}
+.nav a::before{
+    vertical-align: middle;
+    padding-right: 5px;
+}
+/* 当我们进入小屏幕还有超小屏幕的时候 我们nav里面的li浮动起来  并且宽度为20% */
+@media screen and (max-width:991px) {
+    .nav li{
+        float: left;
+        width: 20%;
+    }
+    article{
+        margin-top: 10px;
+    }
+}
+/* 当我们进入超小屏幕的时候 我们nav里面的文字改为14px  */
+@media screen and (max-width:767px) {
+    .nav li a{
+        font-size: 14px;
+        padding-left: 3px;
+    }
+    /* 当我们处于超级小屏幕 第一个小li为100% 其他的为50% */
+    .news li:nth-child(1){
+        width: 100% !important;
+    }
+    .news li{
+        width: 50% !important;
+    }
+    .publish h3{
+        font-size: 14px;
+    }
+}
+/* news */
+.news li{
+    float: left;
+    width: 25%;
+    height: 128px;
+    padding-right: 10px;
+    margin-bottom: 10px;
+}
+
+.news li a{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.news li:nth-child(1){
+    width: 50%;
+    height: 266px;
+}
+
+.news li:nth-child(1) p{
+    line-height: 41px;
+    font-size: 20px;
+    padding: 0 10px;
+}
+.news li a img{
+    width: 100%;
+    height: 100%;
+}
+.news li a p{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 41px;
+    padding: 0 10px;
+    margin-bottom: 0;
+    background: rgba(0,0,0,0.5);
+    font-size: 12px;
+    color:#fff ;
+}
+.publish{
+    border-top:1px solid #ccc ;
+}
+.publish .row{
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+}
+.pic{
+    margin-top: 10px;
+}
+.pic img{
+    width: 100%;
+}
+.banner img{
+    width: 100%;
+}
+.hot{
+    display: block;
+    margin-top: 20px;
+    padding: 0 20px 20px ;
+    border: 1px solid #ccc;
+}
+.hot span{
+    border-radius: 0;
+    margin-bottom:20px ;
+}
